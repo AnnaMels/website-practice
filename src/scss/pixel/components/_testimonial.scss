@@ -1,0 +1,19 @@
+.testimonial {
+  .testimonial__list {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+
+    @include respond('tab') {
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .testimonial__list-item {
+      @include respond('tab') {
+        flex-basis: calc((100% - 20px) / 2);
+      }
+    }
+  }
+}

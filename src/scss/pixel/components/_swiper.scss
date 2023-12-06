@@ -1,0 +1,95 @@
+.swiper {
+  height: 300px;
+  margin-top: 30px;
+
+  .swiper-button-next {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    display: none;
+    transition: opacity 0.3s ease;
+  }
+}
+
+.swiper-wrapper {
+  gap: 20px;
+
+  .swiper-slide {
+    position: relative;
+
+    &:hover .overlay {
+      opacity: 1;
+    }
+
+    &:hover .swiper-button-next {
+      display: block;
+    }
+
+    .swiper-img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 11px;
+    }
+  }
+}
+
+.testimonialSwiper {
+  position: relative;
+  overflow: hidden;
+
+  .testimonial-prev {
+    transform: rotate(180deg);
+  }
+
+  .testimonial-prev,
+  .testimonial-next {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+
+    @include respond('tab') {
+      display: none;
+    }
+  }
+
+  .swiper-text {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include respond('tab') {
+      width: 100%;
+    }
+  }
+
+  .name-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .avatar-img {
+    margin-right: 20px;
+  }
+
+}

@@ -1,0 +1,22 @@
+.faq {
+  background-color: #FFF2E1;
+
+  .faq__list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .faq__list-item {
+    flex-basis: calc((100% - 20px) / 2);
+    border: 1px solid $gray-400;
+    padding: 10px 0;
+    border-radius: 5px;
+    background-color: $white;
+
+    @include respond('tab') {
+      flex-basis: calc((100% - 20px) / 1);
+    }
+  }
+}

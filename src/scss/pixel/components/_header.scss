@@ -1,0 +1,160 @@
+.container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+
+  .mobile-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    height: 100vh;
+    width: 100%;
+    padding: 30px;
+    z-index: 10;
+    background-color: white;
+
+    &.open {
+      display: block;
+    }
+
+    .mobile-menu__navigation {
+      display: flex;
+      justify-content: space-around;
+
+      @include respond('tab') {
+        display: block;
+      }
+
+      .mobile-menu__list-item {
+        padding: 15px 0;
+        border-bottom: 1px solid $gray-400;
+        width: 100%;
+      }
+    }
+
+    .close-btn {
+      width: 30px;
+      position: absolute;
+      top: 30px;
+      right: 30px;
+    }
+
+  }
+
+  .header__navigation {
+    display: flex;
+    gap: 50px;
+
+  }
+
+  .header__nav-list {
+    display: flex;
+    gap: 30px;
+
+    @include respond('tab') {
+      display: none;
+    }
+
+    .header__link {
+      transition: color .3s ease-in-out;
+
+      &:hover {
+        color: #F48C06;
+      }
+    }
+  }
+
+  .header__buttons-list {
+    display: flex;
+    gap: 10px;
+
+    @include respond('tab') {
+      display: none;
+    }
+
+    .sign-in-btn,
+    .sign-up-btn {
+      position: relative;
+      z-index: 0;
+      min-width: 140px;
+      height: 60px;
+      border-radius: 80px;
+      border: none;
+      cursor: pointer;
+
+      &:before {
+        content: '';
+        background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing 20s linear infinite;
+        opacity: 0;
+        transition: opacity .3s ease-in-out;
+        border-radius: 80px;
+      }
+
+      &:hover:before {
+        opacity: 1;
+      }
+
+      &:after {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: $white;
+        left: 0;
+        top: 0;
+        border-radius: 80px;
+      }
+    }
+
+    .sign-in-btn {
+      background-color: $white;
+      color: #F48C06;
+      border: 1px solid #F48C06;
+    }
+
+
+    .sign-up-btn {
+      background-color: #F48C06;
+      color: $white;
+
+      &:after {
+        background-color: #F48C06;
+      }
+    }
+  }
+
+  .burger-menu-btn {
+    @include respond('tab') {
+      display: block;
+      border: none;
+      background-color: transparent;
+    }
+
+    display: none;
+  }
+}
+
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}

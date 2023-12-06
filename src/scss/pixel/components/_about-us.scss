@@ -1,0 +1,46 @@
+.about-us__content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+
+  @include respond('tab') {
+    text-align: center;
+    flex-direction: column-reverse;
+  }
+
+  .about-us__image-content {
+    width: 50%;
+
+    @include respond('tab') {
+      width: 100%;
+    }
+
+    .about-us__image {
+      width: 100%;
+    }
+  }
+
+  .about-us__text-content {
+    width: 50%;
+
+    @include respond('tab') {
+      width: 100%;
+    }
+  }
+
+  .about-us__list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+
+    .about-us__title {
+      margin-top: 10px;
+      font-size: 20px;
+    }
+
+    .about-us__list-image {
+      width: 100px;
+    }
+  }
+}
